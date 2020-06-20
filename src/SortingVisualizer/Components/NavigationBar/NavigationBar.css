@@ -14,5 +14,6 @@
 }
 
 .navbar button:hover{
+    color:white;
     background-color:#151c22;
 }

@@ -33,9 +33,9 @@ footer button{
 
 footer button a{
     text-decoration: none;
-    color:#95c7f5;
 }
 
 footer button:hover{
     background-color:#151c22;
+    color:white;
 }
