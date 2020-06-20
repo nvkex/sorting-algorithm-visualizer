@@ -24,6 +24,12 @@ class SortingVisualizer extends React.Component {
         this.setState({ array });
     }
 
+    simpleSort(){
+        const array = [...this.state.array];
+        array.sort((a,b) => a-b);
+        this.setState({array});
+    }
+
     render() {
         const { array } = this.state;
 
@@ -36,7 +42,7 @@ class SortingVisualizer extends React.Component {
                         })
                     }
                 </div>
-                <ControlPanel generateArr = {() => this.resetArray()} />
+                <ControlPanel generateArr = {() => this.resetArray()} sort = {() => this.simpleSort()}/>
             </div>
         );
     }

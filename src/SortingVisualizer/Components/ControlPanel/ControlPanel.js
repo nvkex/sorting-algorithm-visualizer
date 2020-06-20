@@ -8,7 +8,7 @@ class ControlPanel extends React.Component {
         return (
             <div className="control-panel">
                 <button onClick = {this.props.generateArr}>Generate New Array</button>
-                <button>Start Sorting</button>
+                <button onClick = {this.props.sort}>Start Sorting</button>
                 <button>Select Sort</button>
             </div>
         );
