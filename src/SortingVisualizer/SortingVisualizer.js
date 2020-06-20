@@ -1,5 +1,6 @@
 import React, { Components } from 'react';
 import './SortingVisualizer.css';
+import * as sortingAlgorithms from './sortingAlgorithms/sortingAlgorithms'
 import ControlPanel from './Components/ControlPanel/ControlPanel'
 
 class SortingVisualizer extends React.Component {
@@ -30,6 +31,25 @@ class SortingVisualizer extends React.Component {
         this.setState({array});
     }
 
+    bubbleSort(){
+        const animations = sortingAlgorithms.bubbleSort(this.state.array);
+        const bars = document.getElementsByClassName('array-bar');
+        for(let i =0;i<animations.length;i++){
+            // bars[animations[i][0]].style.backgroundColor = 'red';
+            // bars[animations[i][1]].style.backgroundColor = 'red';
+            setTimeout(function(){
+                let temp = bars[animations[i][0]].style.height;
+                bars[animations[i][0]].style.height = bars[animations[i][1]].style.height;
+                bars[animations[i][1]].style.height = temp;
+            }, i * 0.5);  
+
+            // setTimeout(() => {
+            //     bars[animations[i][0]].style.backgroundColor = 'blue';
+            //     bars[animations[i][1]].style.backgroundColor = 'blue';  
+            // }, i*10);
+        }
+    }
+
     render() {
         const { array } = this.state;
 
@@ -42,7 +62,7 @@ class SortingVisualizer extends React.Component {
                         })
                     }
                 </div>
-                <ControlPanel generateArr = {() => this.resetArray()} sort = {() => this.simpleSort()}/>
+                <ControlPanel generateArr = {() => this.resetArray()} sort = {() => this.bubbleSort()}/>
             </div>
         );
     }

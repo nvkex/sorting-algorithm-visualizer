@@ -1,14 +1,16 @@
 .array-bar{
     width: 2px;
-    background-color:blue;
+    background-color:#F8EFBA;
     display:inline-block;
     margin: 0 1px;
     color:white;
 }
 
 .array-container{
-    padding:2px;
+    background-color:#182C61;
+    padding:10px;
     height: 500px;
     margin: 50px 100px auto;
     border:1px solid black;
+    border-radius: 10px;
 }
