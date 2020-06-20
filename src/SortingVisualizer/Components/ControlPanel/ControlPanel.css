@@ -14,6 +14,5 @@
 }
 
 .control-panel button:hover{
-    background-color: grey;
-    color:white;
+    background-color: rgb(250, 250, 250);
 }
