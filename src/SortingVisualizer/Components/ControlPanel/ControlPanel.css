@@ -1,7 +1,7 @@
 .control-panel{
     margin:20px 0;
 }
-.control-panel button{
+.gen-arr-btn, .control-panel button{
     font-size: medium;
     margin: 0 10px;
     background-color: white;
@@ -14,5 +14,15 @@
 }
 
 .control-panel button:hover{
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(240, 240, 240);
+}
+
+.gen-arr-btn{
+    border:1px solid grey !important;
+    background-color:#182C61 !important;
+    color:white
+}
+
+.gen-arr-btn:hover{
+    background-color:#101e44 !important;
 }

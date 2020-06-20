@@ -1,4 +1,4 @@
-import React, { Components } from 'react';
+import React from 'react';
 import './ControlPanel.css';
 
 class ControlPanel extends React.Component {
@@ -7,9 +7,11 @@ class ControlPanel extends React.Component {
 
         return (
             <div className="control-panel">
-                <button onClick = {this.props.generateArr}>Generate New Array</button>
-                <button onClick = {this.props.sort}>Start Sorting</button>
-                <button>Select Sort</button>
+                <button className = "gen-arr-btn" onClick = {this.props.generateArr}>Generate New Array</button>
+                <button onClick = {this.props.sort}>Bubble Sort</button>
+                <button disabled>Selection Sort</button>
+                <button disabled>Merge Sort</button>
+                <button disabled>Quick Sort</button>
             </div>
         );
     }

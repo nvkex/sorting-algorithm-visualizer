@@ -1,7 +1,8 @@
-import React, { Components } from 'react';
+import React from 'react';
 import './SortingVisualizer.css';
-import * as sortingAlgorithms from './sortingAlgorithms/sortingAlgorithms'
-import ControlPanel from './Components/ControlPanel/ControlPanel'
+import * as sortingAlgorithms from './sortingAlgorithms/sortingAlgorithms';
+import ControlPanel from './Components/ControlPanel/ControlPanel';
+import NavigationBar from './Components/NavigationBar/NavigationBar';
 
 class SortingVisualizer extends React.Component {
 
@@ -41,7 +42,7 @@ class SortingVisualizer extends React.Component {
                 let temp = bars[animations[i][0]].style.height;
                 bars[animations[i][0]].style.height = bars[animations[i][1]].style.height;
                 bars[animations[i][1]].style.height = temp;
-            }, i * 0.5);  
+            }, i * 0.4);  
 
             // setTimeout(() => {
             //     bars[animations[i][0]].style.backgroundColor = 'blue';
@@ -55,6 +56,7 @@ class SortingVisualizer extends React.Component {
 
         return (
             <div>
+                <NavigationBar/>
                 <div className="array-container">
                     {
                         array.map((value, idx) => {
@@ -63,6 +65,9 @@ class SortingVisualizer extends React.Component {
                     }
                 </div>
                 <ControlPanel generateArr = {() => this.resetArray()} sort = {() => this.bubbleSort()}/>
+                <footer>
+                <a href = "https://github.com/nvkex/sorting-algorithm-visualizer"><button><i class="fa fa-github" aria-hidden="true"></i> Github </button></a>
+                </footer>
             </div>
         );
     }
