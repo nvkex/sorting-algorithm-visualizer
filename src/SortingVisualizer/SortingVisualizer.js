@@ -51,6 +51,25 @@ class SortingVisualizer extends React.Component {
         }
     }
 
+    selectionSort(){
+        const animations = sortingAlgorithms.selectionSort(this.state.array);
+        const bars = document.getElementsByClassName('array-bar');
+        for(let i =0;i<animations.length;i++){
+            // bars[animations[i][0]].style.backgroundColor = 'red';
+            // bars[animations[i][1]].style.backgroundColor = 'red';
+            setTimeout(function(){
+                let temp = bars[animations[i][0]].style.height;
+                bars[animations[i][0]].style.height = bars[animations[i][1]].style.height;
+                bars[animations[i][1]].style.height = temp;
+            }, i * 20);  
+
+            // setTimeout(() => {
+            //     bars[animations[i][0]].style.backgroundColor = 'blue';
+            //     bars[animations[i][1]].style.backgroundColor = 'blue';  
+            // }, i*10);
+        }
+    }
+
     render() {
         const { array } = this.state;
 
@@ -64,9 +83,13 @@ class SortingVisualizer extends React.Component {
                         })
                     }
                 </div>
-                <ControlPanel generateArr = {() => this.resetArray()} sort = {() => this.bubbleSort()}/>
+                <ControlPanel 
+                    generateArr = {() => this.resetArray()} 
+                    bubble = {() => this.bubbleSort()}
+                    selection = {() => this.selectionSort()}
+                />
                 <footer>
-                <a href = "https://github.com/nvkex/sorting-algorithm-visualizer"><button><i class="fa fa-github" aria-hidden="true"></i> Github </button></a>
+                <a href = "https://github.com/nvkex/sorting-algorithm-visualizer"><button><i className="fa fa-github" aria-hidden="true"></i> Github </button></a>
                 </footer>
             </div>
         );

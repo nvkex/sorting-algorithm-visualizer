@@ -8,8 +8,8 @@ class ControlPanel extends React.Component {
         return (
             <div className="control-panel">
                 <button className = "gen-arr-btn" onClick = {this.props.generateArr}>Generate New Array</button>
-                <button onClick = {this.props.sort}>Bubble Sort</button>
-                <button disabled>Selection Sort</button>
+                <button onClick = {this.props.bubble}>Bubble Sort</button>
+                <button onClick = {this.props.selection}>Selection Sort</button>
                 <button disabled>Merge Sort</button>
                 <button disabled>Quick Sort</button>
             </div>
